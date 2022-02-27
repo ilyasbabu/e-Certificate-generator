@@ -4,7 +4,7 @@ import django_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-ma(=ratc*2!_!saf0c3#tgmqafesple67&lh&u&a5$)h$vy!it'
+#SECRET_KEY = 'provide in .env file and add to gitignore'
 
 DEBUG = True
 
