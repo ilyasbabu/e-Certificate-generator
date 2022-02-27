@@ -1,1 +1,1 @@
-web: gunicorn todo.wsgi --log-file -
+web: gunicorn Certificate_Generator_and_Sender.wsgi --log-file -
