@@ -79,7 +79,7 @@ def track(request, id, slug):
 		i=0
 
 		data = {
-        	"client_id":"client_id",
+        	"client_id":"${{secrets.client_id}}",
         	"client_secret":"client_secret",
         	"refresh_token": "your_refresh_token",
         	'grant_type': 'refresh_token'

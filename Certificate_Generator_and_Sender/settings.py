@@ -1,3 +1,4 @@
+from concurrent.futures import process
 from pathlib import Path
 import django_heroku
 
@@ -125,8 +126,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'Your_email'
-EMAIL_HOST_PASSWORD = 'app_specific_password'
+EMAIL_HOST_USER = process.env.your_mail
+EMAIL_HOST_PASSWORD = process.env.your_app_password
 EMAIL_USE_TLS = True
 
 
