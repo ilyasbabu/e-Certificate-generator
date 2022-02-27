@@ -1,10 +1,10 @@
 from pathlib import Path
 import django_heroku
-django_heroku.settings(locals())
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'SECRET_KEY'
+SECRET_KEY = 'django-insecure-ma(=ratc*2!_!saf0c3#tgmqafesple67&lh&u&a5$)h$vy!it'
 
 DEBUG = True
 
@@ -128,3 +128,6 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'Your_email'
 EMAIL_HOST_PASSWORD = 'app_specific_password'
 EMAIL_USE_TLS = True
+
+
+django_heroku.settings(locals())
