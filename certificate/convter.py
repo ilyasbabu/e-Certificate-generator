@@ -1,5 +1,6 @@
 import json
 import requests
+import os
 
 
 
@@ -8,7 +9,7 @@ def ppt2pdf(f_path,filename, token):
     headers = {"Authorization": token}
     para = {
         "name": filename,
-        "parents": ["folder_id"]
+        "parents": [str(os.getenv("PARENT_ID"))],
         }
     files = {
         'data': ('metadata', json.dumps(para), 'application/json; charset=UTF-8'),
