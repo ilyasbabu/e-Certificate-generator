@@ -6,7 +6,7 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-#SECRET_KEY = 'provide in .env file and add to gitignore'
+SECRET_KEY = 'provide in .env file and add to gitignore'
 
 DEBUG = True
 
