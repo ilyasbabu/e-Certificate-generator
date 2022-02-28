@@ -79,9 +79,9 @@ def track(request, id, slug):
 		i=0
 
 		data = {
-        	"client_id":"${{secrets.client_id}}",
-        	"client_secret":"client_secret",
-        	"refresh_token": "your_refresh_token",
+        	"client_id": str(os.getenv("CLIENT_ID")),
+        	"client_secret":str(os.getenv("CLIENT_SECRET")),
+        	"refresh_token": str(os.getenv("REFRESH_TOKEN")),
         	'grant_type': 'refresh_token'
             }
 		a = requests.post("https://www.googleapis.com/oauth2/v4/token", data)
