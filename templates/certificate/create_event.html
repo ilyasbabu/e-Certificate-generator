@@ -1,58 +1,55 @@
 {% extends 'base.html' %}
+
 {% block body %}
-<h2>
-	<i class="fa fa-certificate "></i> Issue Certificate
-</h2>
-<br />
-<form enctype="multipart/form-data" method="post">{% csrf_token %}
-	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-5">
-			<div class="form-group">
-				<label for="csvinput">Upload Excelsheet</label>
-				<input type="file" class="form-control" id="csvinput" required name="csv">
-			</div>
-		</div>
-		<div class="col-md-5">
-			<div class="form-group">
-				<label for="templatefile">Upload Template</label>
-				<input type="file" class="form-control" id="templatefile" required name="template">
-			</div>
-		</div>
-		<div class="col-md-1"></div>
-	</div>
-	<br />
-	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-md-7">
-			<div class="form-group">
-				<label for="csvinput">Event Name</label>
-				<input type="text" class="form-control" id="" required name="event_name"
-					placeholder="Enter Title of Event">
-			</div>
-		</div>
-		<div class="col-md-3">
-			<label for="csvinput">.</label>
-			<button type='submit' class="btn btn-primary w-100">Next</button>
-		</div>
-		<div class="col-md-1"></div>
-	</div>
-	<br />
-</form>
-<div class="row">
-	<div class="col-md-1">
-	</div>
-	<div class="col-md-10">
-		<div class="alert alert-success" role="alert">
-			Note :-
-			<ol>
-				<li>Excelsheet should be <b>.csv</b> format.</li>
-				<li>Template file should be in <b>.ppt</b> or <b>.pptx</b> format.</li>
-				<li>The tag should be written in <b>&lt;angular_brackets&gt;</b> eg. <b>&lt;name&gt;</b>.</li>
-				<li>Use <b>Caps Lock</b> to write tags in capital letters Do not use Powerpoint functions.</li>
-			</ol>
-		</div>
-	</div>
-	<div class="col-md-1"></div>
+<div class="min-h-screen py-20 px-4 ">
+    <div>
+        <h1 class="text-2xl font-mono ml-4 sm:ml-36 font-semibold text-slate-700 mt-6">ISSUE CERTIFICATE</h1>
+    </div>
+    <div>
+        <form enctype="multipart/form-data" class="mx-5 sm:ml-44 mt-5" method="post">
+            {% csrf_token %}
+            <div>
+                <div class="sm:flex">
+                    <div class="grid mr-0 sm:mr-5">
+                        <label for="csvinput ">
+                            <p class="font-semibold mb-2">Upload Excelsheet</p>
+                        </label>
+                        <input type="file" required id="csvinput" class="border-2 border-gray-400 rounded"
+                            name="csv">
+                    </div>
+                    <div class="grid mt-4 sm:mt-0">
+                        <label for="templatefile">
+                            <p class="font-semibold mb-2">Upload Template</p>
+                        </label>
+                        <input type="file" required id="templatefile" class="border-2 border-gray-400 rounded"
+                            name="template">
+                    </div>
+                </div>
+                <div class="grid mt-4 ">
+                    <label for="eventname">
+                        <p class="font-semibold mb-2">Event Name</p>
+                    </label>
+                    <input type="text" name="event_name" required
+                        class="border-2 sm:w-1/2 h-8 border-gray-400 rounded" id="">
+                </div>
+                <div>
+                    <div class="border-2 mt-4 sm:mt-6 p-2 sm:w-1/2">
+                        <h4 class="font-semibold">Note:-</h4>
+                        <ol class="list-decimal ml-5">
+                            <li>Excelsheet should be <b>.csv</b> format.</li>
+                            <li>Template file should be in <b>.ppt</b> or <b>.pptx</b> format.</li>
+                            <li>The tag should be written in <b>&lt;angular_brackets&gt;</b> eg.
+                                <b>&lt;name&gt;</b>.</li>
+                            <li>Use <b>Caps Lock</b> to write tags in capital letters Do not use Powerpoint
+                                functions.</li>
+                        </ol>
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="border border-black rounded w-20 h-9 font-semibold bg-gray-200 hover:bg-gray-300">Next</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>
-{% endblock body %}
+{% endblock %}
