@@ -7,7 +7,14 @@
 {% block body %}
 {% load crispy_forms_tags %}
 {% load static %}
-<div class="w-full min-h-screen bg-gray-50 flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
+<div class="w-full min-h-screen bg-gray-50 flex flex-col justify-center items-center  sm:pt-0">
+    {% if messages %}
+    {% for mess in messages %}
+    <div class="alert border-red-700 border-2 p-3 bg-red-100  mx-1 alert-{{mess.tags}}" role="alert">
+        {{mess}}
+    </div>
+    {% endfor %}
+    {% endif %}
     <div class="w-full sm:max-w-md p-5 mx-auto">
         {% if otp %}
         <h2 class="mb-12 text-center text-5xl font-extrabold">Login.</h2>
@@ -59,6 +66,10 @@
             <div class="mt-6 text-center">
                 <a href="{% url 'signup' %}" class="underline">Sign up for an account</a>
             </div>
+
+
+            
+
         </form>
         {% endif %}
     </div>
