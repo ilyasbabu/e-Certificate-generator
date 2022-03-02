@@ -21,25 +21,29 @@
                         </tr>
                     </thead>
                     <tbody>
-						{% for tag in tags %}
+                        {% for tag in tags %}
                         <tr>
                             <th class="p-3 border border-slate-600">{{tag}}</th>
                             <td class="p-3 border border-slate-600">
-                                <select class="form-control" id="type_{{tag}}" name="type_{{tag}}" required
-                                    onchange="fieldInput('{{tag}}')">
-                                    <option selected value="csv">CSV</option>
-                                    <option value="text">Text</option>
-                                    <option value="date">Date</option>
-                                    <option value="auto">Auto Generated</option>
-                                </select>
+                                <div>
+                                    <select class="form-control" id="type_{{tag}}" name="type_{{tag}}" required
+                                        onchange="fieldInput('{{tag}}')">
+                                        <option selected value="csv">CSV</option>
+                                        <option value="text">Text</option>
+                                        <option value="date">Date</option>
+                                        <option value="auto">Auto Generated</option>
+                                    </select>
+                                </div>
                             </td>
                             <td class="p-3 border border-slate-600">
-                                <select class="form-control" name="input_{{tag}}" required>
-                                    <option selected>Choose...</option>
-                                    {% for column in columns %}
-                                    <option value="{{column}}">{{column}}</option>
-                                    {% endfor %}
-                                </select>
+                                <div id="input_{{tag}}">
+                                    <select class="form-control" name="input_{{tag}}" required>
+                                        <option selected>Choose...</option>
+                                        {% for column in columns %}
+                                        <option value="{{column}}">{{column}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
                             </td>
                         </tr>
                         {% endfor %}
